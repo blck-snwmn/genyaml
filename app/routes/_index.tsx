@@ -8,9 +8,25 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export default function Index() {
+  const text = `version: 2
+  updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+    interval: "monthly"
+    groups:
+    dependencies:
+    patterns:
+  - "*"`
+  console.log(text)
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className="container h-screen flex flex-row">
+      <div className="flex-1">01</div>
+      <div className="flex-1">
+        <textarea className="whitespace-pre w-full h-full" >
+          {text}
+        </textarea>
+      </div>
+    </div>
   );
 }
